@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".LockActivity"
+            android:name=".Lock1Activity"
             android:screenOrientation="portrait" />
     </application>
 

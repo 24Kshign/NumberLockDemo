@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/am_btn_lock1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:onClick="doLogin"
-        android:text="登录" />
-</RelativeLayout>
+        android:text="密码锁样式1" />
+
+    <Button
+        android:id="@+id/am_btn_lock2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doLogin"
+        android:text="密码锁样式2" />
+</LinearLayout>

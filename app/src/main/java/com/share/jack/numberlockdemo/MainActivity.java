@@ -20,6 +20,13 @@ public class MainActivity extends Activity {
     }
 
     public void doLogin(View v) {
-        startActivity(new Intent(this, LockActivity.class).putExtra("type", Consts.SETTING_PASSWORD));
+        switch (v.getId()) {
+            case R.id.am_btn_lock1:
+                startActivity(new Intent(this, Lock1Activity.class).putExtra("type", Consts.SETTING_PASSWORD));
+                break;
+            case R.id.am_btn_lock2:
+                startActivity(new Intent(this, Lock2Activity.class).putExtra("type", Consts.SETTING_PASSWORD));
+                break;
+        }
     }
 }

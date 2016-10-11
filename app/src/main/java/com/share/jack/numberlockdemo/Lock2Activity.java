@@ -15,7 +15,7 @@ import com.share.jack.numberlockdemo.widget.PasswordTextView;
 /**
  * Created by Jack on 16/10/10.
  */
-public class LockActivity extends Activity implements View.OnClickListener {
+public class Lock2Activity extends Activity implements View.OnClickListener {
 
     private TextView mTvDelete;
     private TextView mTvForgetPwd;
@@ -33,7 +33,7 @@ public class LockActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lock);
+        setContentView(R.layout.activity_lock1);
         initView();
         initListener();// 事件处理
         //获取界面传递的值
@@ -101,7 +101,7 @@ public class LockActivity extends Activity implements View.OnClickListener {
                     if (input.equals(fBuffer.toString())) {//一致
                         showToastMsg(getString(R.string.setting_pwd_success));
                         //保存密码到文件中
-                        MyPrefs.getInstance().initSharedPreferences(LockActivity.this);
+                        MyPrefs.getInstance().initSharedPreferences(Lock2Activity.this);
                         MyPrefs.getInstance().writeString("password", input);
                         type = Consts.LOGIN_PASSWORD;
                         tv_info.setText("你可以登录了");
