@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import com.share.jack.numberlockdemo.util.Consts;
 import com.share.jack.numberlockdemo.util.MyPrefs;
+import com.share.jack.numberlockdemo.widget.MyPasswordTextView;
 import com.share.jack.numberlockdemo.widget.NumericKeyboard;
-import com.share.jack.numberlockdemo.widget.PasswordTextView;
 
 /**
  * Created by Jack on 16/10/10.
@@ -22,7 +22,7 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
     // 数字键盘布局
     private NumericKeyboard nk;
     // 密码框
-    private PasswordTextView et_pwd1, et_pwd2, et_pwd3, et_pwd4;
+    private MyPasswordTextView et_pwd1, et_pwd2, et_pwd3, et_pwd4;
     private int type;
     private TextView tv_info;//提示信息
     //声明字符串保存每一次输入的密码
@@ -33,7 +33,7 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lock1);
+        setContentView(R.layout.activity_lock2);
         initView();
         initListener();// 事件处理
         //获取界面传递的值
@@ -43,10 +43,10 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
     private void initView() {
         nk = (NumericKeyboard) findViewById(R.id.nk);// 数字键盘
         // 密码框
-        et_pwd1 = (PasswordTextView) findViewById(R.id.et_pwd1);
-        et_pwd2 = (PasswordTextView) findViewById(R.id.et_pwd2);
-        et_pwd3 = (PasswordTextView) findViewById(R.id.et_pwd3);
-        et_pwd4 = (PasswordTextView) findViewById(R.id.et_pwd4);
+        et_pwd1 = (MyPasswordTextView) findViewById(R.id.et_pwd1);
+        et_pwd2 = (MyPasswordTextView) findViewById(R.id.et_pwd2);
+        et_pwd3 = (MyPasswordTextView) findViewById(R.id.et_pwd3);
+        et_pwd4 = (MyPasswordTextView) findViewById(R.id.et_pwd4);
         tv_info = (TextView) findViewById(R.id.tv_info);//提示信息
         mTvDelete = (TextView) findViewById(R.id.tv_delete);
         mTvForgetPwd = (TextView) findViewById(R.id.tv_forget_pwd);
@@ -64,7 +64,7 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
                 setText(number + "");
             }
         });
-        et_pwd1.setOnTextChangedListener(new PasswordTextView.OnTextChangedListener() {
+        et_pwd1.setOnMyTextChangedListener(new MyPasswordTextView.OnMyTextChangedListener() {
             @Override
             public void textChanged(String content) {
                 if (TextUtils.isEmpty(content)) {
@@ -75,7 +75,7 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
             }
         });
         //监听最后一个密码框的文本改变事件回调
-        et_pwd4.setOnTextChangedListener(new PasswordTextView.OnTextChangedListener() {
+        et_pwd4.setOnMyTextChangedListener(new MyPasswordTextView.OnMyTextChangedListener() {
             @Override
             public void textChanged(String content) {
                 input = et_pwd1.getTextContent() + et_pwd2.getTextContent() +

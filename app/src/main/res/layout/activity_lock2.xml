@@ -25,21 +25,21 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <com.share.jack.numberlockdemo.widget.PasswordTextView
+        <com.share.jack.numberlockdemo.widget.MyPasswordTextView
             android:id="@+id/et_pwd1"
             style="@style/style_edit" />
 
-        <com.share.jack.numberlockdemo.widget.PasswordTextView
+        <com.share.jack.numberlockdemo.widget.MyPasswordTextView
             android:id="@+id/et_pwd2"
             style="@style/style_edit"
             android:layout_marginLeft="15dp" />
 
-        <com.share.jack.numberlockdemo.widget.PasswordTextView
+        <com.share.jack.numberlockdemo.widget.MyPasswordTextView
             android:id="@+id/et_pwd3"
             style="@style/style_edit"
             android:layout_marginLeft="15dp" />
 
-        <com.share.jack.numberlockdemo.widget.PasswordTextView
+        <com.share.jack.numberlockdemo.widget.MyPasswordTextView
             android:id="@+id/et_pwd4"
             style="@style/style_edit"
             android:layout_marginLeft="15dp" />
