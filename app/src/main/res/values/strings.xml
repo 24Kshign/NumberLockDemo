@@ -14,28 +14,8 @@
     <string name="please_input_pwd_again">确认密码</string>
     <string name="not_equals">两次输入的密码不一致,请重新输入！</string>
     <string name="setting_pwd_success">密码设置成功！</string>
-    <string name="login_success">登录成功！</string>
     <string name="forget_pwd">忘记密码?</string>
     <string name="delete">删除</string>
-    <string name="test1">数字键盘1</string>
-    <string name="test2">数字键盘2</string>
-    <string name="test3">数字键盘3</string>
-    <string name="dialog_title">提示</string>
-    <string name="dialog_msg">请选择类型：</string>
-    <string name="dialog_ok">设置密码</string>
-    <string name="dialog_cancel">登录</string>
-
-    <!-- 数字按键 -->
-    <string name="zero">0</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="neigh">9</string>
 
 
 </resources>
