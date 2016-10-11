@@ -1,7 +1,10 @@
 package com.share.jack.numberlockdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -86,16 +89,14 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
                     tv_info.setText(getString(R.string.please_input_pwd_again));
                     type = Consts.SURE_SETTING_PASSWORD;
                     fBuffer.append(input);//保存第一次输入的密码
-                    clearText();//清除输入
                 } else if (type == Consts.LOGIN_PASSWORD) {//登录
                     if (!input.equals(MyPrefs.getInstance().readString("password"))) {
                         showToastMsg("密码错误,请重新输入");
                     } else {
                         showToastMsg("密码正确,欢迎登录");
-                        tv_info.setText("请输入密码");
-                        type = Consts.SETTING_PASSWORD;
+                        startActivity(new Intent(Lock2Activity.this, LuckyActivity.class));
+                        finish();
                     }
-                    clearText();
                 } else if (type == Consts.SURE_SETTING_PASSWORD) {//确认密码
                     //判断两次输入的密码是否一致
                     if (input.equals(fBuffer.toString())) {//一致
@@ -105,16 +106,36 @@ public class Lock2Activity extends Activity implements View.OnClickListener {
                         MyPrefs.getInstance().writeString("password", input);
                         type = Consts.LOGIN_PASSWORD;
                         tv_info.setText("你可以登录了");
-                        clearText();
                     } else {//不一致
                         showToastMsg(getString(R.string.not_equals));
-                        clearText();//清除输入
                     }
                 }
+                startTimer();
             }
         });
         mTvDelete.setOnClickListener(this);
         mTvForgetPwd.setOnClickListener(this);
+    }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            clearText();
+        }
+    };
+
+    private void startTimer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                handler.sendEmptyMessage(0);
+            }
+        }).start();
     }
 
     /**

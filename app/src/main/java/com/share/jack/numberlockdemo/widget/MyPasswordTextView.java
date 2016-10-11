@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 
 /**
- *
+ *Created by Jack on 16/10/11.
  */
 public class MyPasswordTextView extends TextView {
     private String content = "";//显示的内容

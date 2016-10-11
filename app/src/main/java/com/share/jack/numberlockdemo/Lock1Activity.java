@@ -1,6 +1,7 @@
 package com.share.jack.numberlockdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -92,8 +93,8 @@ public class Lock1Activity extends Activity implements View.OnClickListener {
                         showToastMsg("密码错误,请重新输入");
                     } else {
                         showToastMsg("密码正确,欢迎登录");
-                        tv_info.setText("请输入密码");
-                        type = Consts.SETTING_PASSWORD;
+                        startActivity(new Intent(Lock1Activity.this, LuckyActivity.class));
+                        finish();
                     }
                     clearText();
                 } else if (type == Consts.SURE_SETTING_PASSWORD) {//确认密码
