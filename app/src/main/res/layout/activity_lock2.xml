@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLockBackground"
+    android:gravity="center">
+    <!-- 提示信息 -->
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/please_input_pwd"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+    <!-- 密码显示框 -->
+    <LinearLayout
+        android:id="@+id/ll_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.share.jack.numberlockdemo.widget.PasswordTextView
+            android:id="@+id/et_pwd1"
+            style="@style/style_edit" />
+
+        <com.share.jack.numberlockdemo.widget.PasswordTextView
+            android:id="@+id/et_pwd2"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+
+        <com.share.jack.numberlockdemo.widget.PasswordTextView
+            android:id="@+id/et_pwd3"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+
+        <com.share.jack.numberlockdemo.widget.PasswordTextView
+            android:id="@+id/et_pwd4"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+    </LinearLayout>
+    <!-- 数字键盘 -->
+    <com.share.jack.numberlockdemo.widget.NumericKeyboard
+        android:id="@+id/nk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp" />
+    <!-- 底部布局 -->
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+        <!-- 重输按钮 -->
+        <TextView
+            android:id="@+id/tv_forget_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="doClick"
+            android:text="@string/forget_pwd"
+            android:textColor="#0f93df" />
+        <!-- 删除按钮 -->
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="doClick"
+            android:text="@string/delete"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>
