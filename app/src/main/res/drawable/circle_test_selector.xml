@@ -5,7 +5,7 @@
 
     <item android:state_selected="true">
         <shape android:shape="oval">
-            <solid android:color="@android:color/black" />
+            <solid android:color="@android:color/white" />
         </shape>
     </item>
 
