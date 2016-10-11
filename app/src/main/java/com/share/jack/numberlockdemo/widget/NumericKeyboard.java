@@ -85,6 +85,7 @@ public class NumericKeyboard extends View {
         paint.setTextSize(40);// 设置字体大小
         paint.setStrokeWidth(2);
         // 绘制文本,注意是从坐标开始往上绘制
+        // 这里较难的就是算坐标
         // 绘制第一排1,2,3
         canvas.drawText("1", first_x, 40 + first_y, paint);
         canvas.drawText("2", first_x * 2, 40 + first_y, paint);
@@ -260,11 +261,6 @@ public class NumericKeyboard extends View {
 
     /**
      * 数字点击事件
-     *
-     * @author haoran.shu
-     * @version 1.0
-     * @ClassName: OnNumberClick
-     * @date 2014年6月11日 上午11:41:09
      */
     public interface OnNumberClick {
         /**

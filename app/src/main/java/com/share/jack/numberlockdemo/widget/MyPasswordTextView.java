@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 
 /**
- *Created by Jack on 16/10/11.
+ * Created by Jack on 16/10/11.
  */
 public class MyPasswordTextView extends TextView {
     private String content = "";//显示的内容
@@ -76,11 +76,6 @@ public class MyPasswordTextView extends TextView {
 
     /**
      * 文本改变事件接口
-     *
-     * @author haoran.shu
-     * @version 1.0
-     * @ClassName: OnTextChangedListener
-     * @date 2014年6月12日 上午11:37:17
      */
     public interface OnMyTextChangedListener {
         /**
