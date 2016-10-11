@@ -83,6 +83,7 @@ public class NumericKeyboard extends View {
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);// 设置画笔颜色
         paint.setTextSize(40);// 设置字体大小
+        paint.setStrokeWidth(2);
         // 绘制文本,注意是从坐标开始往上绘制
         // 绘制第一排1,2,3
         canvas.drawText("1", first_x, 40 + first_y, paint);
@@ -104,30 +105,30 @@ public class NumericKeyboard extends View {
         //设置绘制空心圆
         paint.setStyle(Paint.Style.STROKE);
         //依次绘制第一排的圆
-        canvas.drawCircle(first_x + 10, 40 + first_y - 15, 50, paint);
-        canvas.drawCircle(first_x * 2 + 10, 40 + first_y - 15, 50, paint);
-        canvas.drawCircle(first_x * 3 + 10, 40 + first_y - 15, 50, paint);
+        canvas.drawCircle(first_x + 10, 40 + first_y - 15, 70, paint);
+        canvas.drawCircle(first_x * 2 + 10, 40 + first_y - 15, 70, paint);
+        canvas.drawCircle(first_x * 3 + 10, 40 + first_y - 15, 70, paint);
         //依次绘制第2排的圆
-        canvas.drawCircle(first_x + 10, 40 + first_y + first_x - 15, 50, paint);
-        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x - 15, 50, paint);
-        canvas.drawCircle(first_x * 3 + 10, 40 + first_y + first_x - 15, 50, paint);
+        canvas.drawCircle(first_x + 10, 40 + first_y + first_x - 15, 70, paint);
+        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x - 15, 70, paint);
+        canvas.drawCircle(first_x * 3 + 10, 40 + first_y + first_x - 15, 70, paint);
         //依次绘制第3排的圆
-        canvas.drawCircle(first_x + 10, 40 + first_y + first_x * 2 - 15, 50, paint);
-        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x * 2 - 15, 50, paint);
-        canvas.drawCircle(first_x * 3 + 10, 40 + first_y + first_x * 2 - 15, 50, paint);
+        canvas.drawCircle(first_x + 10, 40 + first_y + first_x * 2 - 15, 70, paint);
+        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x * 2 - 15, 70, paint);
+        canvas.drawCircle(first_x * 3 + 10, 40 + first_y + first_x * 2 - 15, 70, paint);
         //绘制最后一个圆
-        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x * 3 - 15, 50, paint);
+        canvas.drawCircle(first_x * 2 + 10, 40 + first_y + first_x * 3 - 15, 70, paint);
 
         //判断是否点击数字(点击数字产生的渐变效果)
         if (circle_x > 0 && circle_y > 0) {
             if (type == 0) {//按下刷新
                 paint.setColor(Color.WHITE);//设置画笔颜色
                 paint.setStyle(Paint.Style.FILL_AND_STROKE);//按下的时候绘制实心圆
-                canvas.drawCircle(circle_x, circle_y, 50, paint);//绘制圆
+                canvas.drawCircle(circle_x, circle_y, 70, paint);//绘制圆
             } else if (type == 1) {//弹起刷新
                 paint.setColor(Color.WHITE);//设置画笔颜色
                 paint.setStyle(Paint.Style.STROKE);//弹起的时候再绘制空心圆
-                canvas.drawCircle(circle_x, circle_y, 50, paint);//绘制圆
+                canvas.drawCircle(circle_x, circle_y, 70, paint);//绘制圆
                 //绘制完成后,重置
                 circle_x = 0;
                 circle_y = 0;
@@ -195,57 +196,57 @@ public class NumericKeyboard extends View {
      */
     private void handleDown(float x, float y) {
         //判断点击的是那一列的数据
-        if (xs[0] - 50 <= x && x <= xs[0] + 50) {//第一列
+        if (xs[0] - 70 <= x && x <= xs[0] + 70) {//第一列
             //获取点击处的圆心横坐标
             circle_x = xs[0];
             //判断点击的是哪一排
-            if (ys[0] - 50 <= y && ys[0] + 50 >= y) {//第1排
+            if (ys[0] - 70 <= y && ys[0] + 70 >= y) {//第1排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[0];
                 number = 1;//设置点击的数字
-            } else if (ys[1] - 50 <= y && ys[1] + 50 >= y) {//第2排
+            } else if (ys[1] - 70 <= y && ys[1] + 70 >= y) {//第2排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[1];
                 number = 4;//设置点击的数字
-            } else if (ys[2] - 50 <= y && ys[2] + 50 >= y) {//第3排
+            } else if (ys[2] - 70 <= y && ys[2] + 70 >= y) {//第3排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[2];
                 number = 7;//设置点击的数字
             }
-        } else if (xs[1] - 50 <= x && x <= xs[1] + 50) {//第2列
+        } else if (xs[1] - 70 <= x && x <= xs[1] + 70) {//第2列
             //获取点击处的圆心横坐标
             circle_x = xs[1];
             //判断点击的是哪一排
-            if (ys[0] - 50 <= y && ys[0] + 50 >= y) {//第1排
+            if (ys[0] - 70 <= y && ys[0] + 70 >= y) {//第1排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[0];
                 number = 2;//设置点击的数字
-            } else if (ys[1] - 50 <= y && ys[1] + 50 >= y) {//第2排
+            } else if (ys[1] - 70 <= y && ys[1] + 70 >= y) {//第2排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[1];
                 number = 5;//设置点击的数字
-            } else if (ys[2] - 50 <= y && ys[2] + 50 >= y) {//第3排
+            } else if (ys[2] - 70 <= y && ys[2] + 70 >= y) {//第3排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[2];
                 number = 8;//设置点击的数字
-            } else if (ys[3] - 50 <= y && ys[3] + 50 >= y) {//第4排
+            } else if (ys[3] - 70 <= y && ys[3] + 70 >= y) {//第4排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[3];
                 number = 0;//设置点击的数字
             }
-        } else if (xs[2] - 50 <= x && x <= xs[2] + 50) {//第3列
+        } else if (xs[2] - 70 <= x && x <= xs[2] + 70) {//第3列
             //获取点击处的圆心横坐标
             circle_x = xs[2];
             //判断点击的是哪一排
-            if (ys[0] - 50 <= y && ys[0] + 50 >= y) {//第1排
+            if (ys[0] - 70 <= y && ys[0] + 70 >= y) {//第1排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[0];
                 number = 3;//设置点击的数字
-            } else if (ys[1] - 50 <= y && ys[1] + 50 >= y) {//第2排
+            } else if (ys[1] - 70 <= y && ys[1] + 70 >= y) {//第2排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[1];
                 number = 6;//设置点击的数字
-            } else if (ys[2] - 50 <= y && ys[2] + 50 >= y) {//第3排
+            } else if (ys[2] - 70 <= y && ys[2] + 70 >= y) {//第3排
                 //获取点击的数字圆的圆心纵坐标
                 circle_y = ys[2];
                 number = 9;//设置点击的数字
